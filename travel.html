@@ -1,0 +1,37 @@
+%%[
+
+SET @fullName = Concat(AttributeValue("FirstName"), " ", AttributeValue("LastName"))
+SET @loyaltyLevel = AttributeValue("LoyaltyLevel")
+SET @loyaltyPoints = AttributeValue("LoyaltyPoints")
+
+IF @loyaltyLevel == "Diamond" THEN
+   SET @loyaltyBadge = ContentImageByKey("17ee6ccd-848f-41d9-8839-ec17fa926785")
+
+ELSEIF @loyaltyLevel == "Gold" THEN
+   SET @loyaltyBadge = ContentImageByKey("4695bbe1-0a56-4886-804b-55db9c805b43")
+
+ELSEIF @loyaltyLevel == "Bronze" THEN
+   SET @loyaltyBadge = ContentImageByKey("24fe6aab-ab15-40b4-9c64-8f9b65d3b9fc")
+
+ELSEIF @loyaltyLevel == "Platinum" THEN
+   SET @loyaltyBadge = ContentImageByKey("e99498d1-8fc3-49d4-944d-b60d2b00312c")
+
+ENDIF
+]%%
+
+%%=v(@loyaltyBadge)=%%
+
+Hello %%=v(@fullName)=%%,
+
+We wanted to remind you that you have accumulated %%LoyaltyPoints%% travel credits on your account that can be used for your next trip. 
+We encourage you to take advantage of this benefit and redeem your travel credits for your next adventure.
+
+Thank you for choosing our travel company for your travel needs. We look forward to helping you plan your next trip.
+
+Best regards,
+Next Travel
+
+Crafted with 💜 by AMPscript30.
+AMPScripted Smiles Ltd.
+456 Data Extension Drive Suite 321, Loop City,
+Variable Valley, DE 12345

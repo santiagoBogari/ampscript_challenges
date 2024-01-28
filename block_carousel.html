@@ -1,0 +1,163 @@
+<style>
+    .carousel {
+      margin: 0 auto;
+      overflow: hidden;
+      text-align: center;
+    }
+  
+    .slides {
+      width: 100%;
+      height: 300px;
+      margin: auto;
+      display: flex;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+  
+    .slides::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .slides-item {
+      align-items: center;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      font-size: 100px;
+      height: 300px;
+      text-align: center;
+      justify-content: center;
+      margin: 0 1rem;
+      position: relative;
+      scroll-snap-align: start;
+      transform: scale(1);
+      transform-origin: center center;
+      transition: transform 0.5s;
+      width: 100%;
+    }
+  
+    .carousel__nav {
+      padding: 1.25rem 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .slider-nav {
+      align-items: center;
+      color: #000;
+      background-color: #ed4c21;
+      display: inline-flex;
+      height: 5px;
+      justify-content: center;
+      padding: 5px;
+      position: relative;
+      text-decoration: none;
+      width: 5px;
+      margin-inline: 10px;
+    }
+  
+    .slider-nav:hover,
+    .slider-nav:active {
+      background-color: #122333;
+      color: #000;
+    }
+  
+    .carousel__skip-link {
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      top: auto;
+      width: 1px;
+    }
+  
+    .carousel__skip-link:focus {
+      align-items: center;
+      background-color: #000;
+      color: #000;
+      display: flex;
+      font-size: 30px;
+      height: 680px;
+      justify-content: center;
+      opacity: 0.8;
+      text-decoration: none;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+    }
+  
+    span {
+      font-size: 30px;
+      color: #000000;
+    }
+  
+    p {
+      font-size: 30px;
+      color: #000000;
+    }
+  
+    @media (max-width: 600px) {
+      .carousel {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .slides {
+        width: 100%;
+        overflow-x: auto;
+      }
+  
+      .slides-item {
+        font-size: 20px;
+        margin: 0 0.5rem;
+      }
+  
+      span {
+        font-size: 20px;
+      }
+  
+      p {
+        font-size: 22px;
+      }
+      .slider-nav {
+        margin: 0 10px;
+      }
+    }
+  </style>
+  
+  <section class="carousel" aria-label="carousel" tabindex="0">
+    <a class="carousel__skip-link" href="#skip-link">Skip the Carousel</a>
+    <div class="slides">
+      <div class="slides-item slide-1" id="slide-1" aria-label="slide 1 of 3" tabindex="0">
+        <span>Go Camping !!!</span>
+        <p>
+          Click the three buttons.
+        </p>
+        <img style="max-width: 100%;" src="https://as1.ftcdn.net/v2/jpg/04/46/77/96/1000_F_446779681_lGiw1KtqwUKYdIvwHjIdv6qJy3PNc6Z4.jpg">
+      </div>
+      <div class="slides-item slide-2" id="slide-2" aria-label="slide 2 of 3" tabindex="0">
+        <span>Go Trekking !!!</span>
+        <p>
+         Click the three buttons.
+        </p>
+        <img style="max-width: 100%;" src="https://as1.ftcdn.net/v2/jpg/04/46/78/00/1000_F_446780061_Yz8nFLKR0m38t2m4tAYdPHY5cuFlUCEY.jpg">
+      </div>
+      <div class="slides-item slide-3" id="slide-3" aria-label="slide 3 of 3" tabindex="0">
+        <span>Go Hiking !!!</span>
+        <p>
+         Click the three buttons.
+        </p>
+        <img style="max-width: 100%;" src="https://as1.ftcdn.net/v2/jpg/04/46/77/94/1000_F_446779482_ADme0rJL0BUmz3ebwV3ZTjdh7AJ3O2vV.jpg">
+      </div>
+    </div>
+    <div class="carousel__nav">
+      <a class="slider-nav" href="#slide-1" aria-label="Go to slide 1"></a>
+      <a class="slider-nav" href="#slide-2" aria-label="Go to slide 2"></a>
+      <a class="slider-nav" href="#slide-3" aria-label="Go to slide 3"></a>
+    </div>
+    <div class="carousel__skip-message" id="skip-link" tabindex="0"></div>
+  </section>

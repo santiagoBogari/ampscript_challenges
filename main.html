@@ -1,0 +1,50 @@
+%%[ 
+
+SET @email = AttributeValue("Email")
+SET @firstName = AttributeValue("FirstName")
+SET @lastName = AttributeValue("LastName")
+SET @subscriberKey = AttributeValue("Subscriberkey")
+SET @now = Now()
+
+UpsertDE("Reconfirmation_Log",1, "SubscriberKey", @subscriberKey, "Email", @email,"FirstName",@firstName,"LastName",@lastname,"SendDate",@now) ]%%
+
+Hi %%=v(@firstName)=%%,Thanks for joining the fight against Parkinson's.
+
+You received 1 entries for a total donation of $11 to the Michael J. Fox Foundation. Your confirmation number is 000000560
+
+%%[
+VAR @email, @defaultPromo, @promoCode
+
+SET @email = AttributeValue("EmailAddress")
+SET @defaultPromo = "WELCOME15"
+
+SET @promoCode = ClaimRowValue("CouponCodes", "CouponCode", "IsClaimed", @defaultPromo, "EmailAddress", @email)
+]%%
+<br>
+<div style="text-align: center">
+  <p style="text-align: center;">
+    Hello, Mary<br>
+    Thank you for your interest in our new product line! Here is your special promo code for your next purchase:
+  </p>
+  <h3 style="background-color: #ec1000; color: white; text-align: center;">
+    %%=v(@promoCode)=%%
+  </h3>
+  <p style="text-align: center;">
+    Best regards,
+    <br>
+    The Next Beauty
+  </p>
+</div>
+
+<span> 
+  <table width="100%" cellspacing='0' cellpadding='0' border='0' role='presentation' aria-hidden='true' > 
+    <tr>
+      <td style="font-size:10px;height:10px;max-height:10px;line-height:10px">&nbsp;</td>
+    </tr> 
+    <tr><td style="padding-bottom:5px;color:#131A1F;font-size: 14px;line-height: 20px;text-align: left; font-family:'Helvetica Neue',Helvetica,Arial,'DejaVuSansBook',sans-serif;"><b>Icelandair</b></td>
+    </tr> 
+    <tr><td style="padding-bottom:5px;color:#131A1F;font-size: 12px;line-height: 18px;text-align: left; font-family:'Helvetica Neue',Helvetica,Arial,'DejaVuSansBook',sans-serif;"><b>8:50 pm &ndash; 6:05 am</b>&emsp;nonstop</td>
+    </tr> 
+    <tr><td style="padding-bottom:5px;color:#131A1F;font-size: 12px;line-height: 18px;text-align: left; font-family:'Helvetica Neue',Helvetica,Arial,'DejaVuSansBook',sans-serif;"><b>5:10 pm &ndash; 6:50 pm</b>&emsp;nonstop</td>
+    </tr> </table> 
+  </span>

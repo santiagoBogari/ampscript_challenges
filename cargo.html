@@ -1,0 +1,37 @@
+<div class="smartcapture-controls"><div class="sc-formfield-label"><label for="Cargo">Cargo *</label></div>
+<div class="sc-formfield-input">
+ <select name="Cargo" id="Cargo" data-field-type="Text" required="required" data-validation-message="Please fill out this field.">
+  <option value="" id="" selected="selected"></option>
+  <option value="Ejecutivo de Cuentas Empresariales" id="Ejecutivo de Cuentas Empresariales">Ejecutivo de Cuentas Empresariales</option>
+  <option value="Ejecutivo de ventas B2C" id="Ejecutivo de ventas B2C">Ejecutivo de ventas B2C</option>
+  <option value="Ejecutivo de ventas B2B" id="Ejecutivo de ventas B2B">Ejecutivo de ventas B2B</option>
+  <option value="Ejecutivo de Relaciones de Clientes" id="Ejecutivo de Relaciones de Clientes">Ejecutivo de Relaciones de Clientes</option>
+  <option value="Analista de Datos de Marketing" id="Analista de Datos de Marketing">Analista de Datos de Marketing</option>
+  <option value="Diseñador Gráfico de Marketing" id="Diseñador Gráfico de Marketing">Diseñador Gráfico de Marketing</option>
+  <option value="Especialista en Automatización de Marketing" id="Especialista en Automatización de Marketing">Especialista en Automatización de Marketing</option>
+  <option value="Especialista en Campañas de Marketing" id="Especialista en Campañas de Marketing">Especialista en Campañas de Marketing</option>
+  <option value="Desarrollador de Software FrontEnd" id="Desarrollador de Software FrontEnd">Desarrollador de Software FrontEnd</option>
+  <option value="Desarrollador de Software BackEnd" id="Desarrollador de Software BackEnd">Desarrollador de Software BackEnd</option>
+  <option value="Desarrollador de Software FullStack" id="Desarrollador de Software FullStack">Desarrollador de Software FullStack</option>
+  <option value="Desarrollador de Software Aplicaciones Móviles" id="Desarrollador de Software Aplicaciones Móviles">Desarrollador de Software Aplicaciones Móviles</option>
+ </select>
+</div>
+</div>
+<input name="Perfil_Persona" type="hidden" value="">
+<script>
+  var cargoField = document.getElementById('Cargo');
+  var perfilPersonaField = document.querySelector('input[name="Perfil_Persona"]');
+  cargoField.addEventListener('change', function() {
+    var cargoValue = cargoField.value;
+
+    if (cargoValue.includes("Ejecutivo")) {
+      perfilPersonaField.value = "Team Ventas";
+    } else if (cargoValue.includes("Marketing")) {
+      perfilPersonaField.value = "Team Marketing";
+    } else if (cargoValue.includes("Desarrollador")) {
+      perfilPersonaField.value = "Team Dev";
+    } else {
+      perfilPersonaField.value = "";
+    }
+  });
+</script>
